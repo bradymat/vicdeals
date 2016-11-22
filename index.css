@@ -3,36 +3,49 @@ body{
 }
 main {
   margin: 0 auto;
-  text-align: center;
-}
-#page{
-  margin: 0 auto;
-  padding: 0;
 }
 #header{
-  height: 15vh;
-  background-color: blue;
+  height: 12vh;
+  /*background-color: #222;*/
+;
 }
 #innerHeader{
+  padding-top: 3vh;
   width: 80%;
   margin: 0 auto;
   height: inherit;
   display: flex;
-  background-color: red;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 #logo{
-  width: 300px;
-  height: inherit;
-  background-color: #000;
+  z-index: 2;
+  position: absolute;
+  width: 200px;
+  height: 100px;
 }
-#search{
-  width: 30vw;
-  height: 30px;
+#logo img{
+  height: inherit;
+}
+#block{
+  order: 1;
+  width: 80%;
+}
+#searchAndCart{
+  order: 2;
+  width: 20%;
   background-color: #fff;
 }
-#slider{
+#banner{
   height: 35vh;
-  background-color: green;
+  background-color: lightblue;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#banner img{
+  width: 100%;
 }
 #dailyDeals{
   width: 80%;
@@ -40,20 +53,28 @@ main {
 
 }
 #dealTitle{
-  height: 5vh;
+  padding-top: 10px;
+  text-align: left;
+  height: 8vh;
 }
 #deals{
   height: 40vh;
-  background-color: pink;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .deal{
-  background-color: yellow;
-  height: 90%;
-  border-left: 5px solid black;
+  margin-right: 40px;
+  height: 100%;
+}
+.deal img{
+  height: 70%;
+}
+.bargain{
+  text-decoration: line-through;
+
 }
 #footer{
+  text-align: center;
   height: 5vh;
 }

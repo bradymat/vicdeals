@@ -14,9 +14,10 @@ module.exports = (state, action) => {
     //   newState.products.sort((a, b) => a.abv > b.abv ? -1 : 1)
     //   return newState
     case 'ADD_PRODUCT_TO_CART':
-        const cart = newState.products.filter((product) => {
-        return product == payload
+        const newItem = newState.products.filter((product) => {
+        return product.name == payload
       })
+      newState.cart.push(newItem[0])
       return newState
     case 'SEARCH_FOR_PRODUCTS':
         newState.searched = newState.products.filter((product) => {

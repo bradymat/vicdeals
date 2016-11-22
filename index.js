@@ -7,9 +7,9 @@ const reducer = require('./reducer')
 
 const initState = {
   products: [
-    {name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', deal: true},
-    {name: 'Iron Man', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg', deal: true},
-    {name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', deal: false}
+    {name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', price: 25, deal: true},
+    {name: 'Iron Man', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg', price: 25, deal: true},
+    {name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', price: 25, deal: false}
   ],
   searched: [],
   cart: [],
@@ -17,15 +17,19 @@ const initState = {
 }
 const { dispatch, subscribe, getState } = createStore(reducer, initState)
 
-const updateView = () => {
-  console.log('homeView')
+const goHome = () => {
+  // console.log('homeView')
   const state = getState()
   const newView = Home(state, dispatch)
   update(initView, newView)
 }
 
+const goCart = () => {
+  console.log('cart');
+}
+
 const showSearched = () => {
-  console.log('searchedView')
+  // console.log('searchedView')
   const state = getState()
   if(state.searched.length > 0){
     const newView = Searched(state, dispatch)
@@ -36,9 +40,10 @@ const showSearched = () => {
 const main = document.querySelector('main')
 const initView = main.appendChild(Home(initState, dispatch))
 
-subscribe(updateView)
+subscribe(goHome)
 subscribe(showSearched)
 
 module.exports = {
-  showSearched
+  goHome,
+  goCart
 }

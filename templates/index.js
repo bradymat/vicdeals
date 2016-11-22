@@ -17,11 +17,11 @@ module.exports = (state, dispatch) => {
       <div id='deals'>
         ${deals.map((deal) => html`
           <div class='deal col-lg-2 col-xs-12' onclick=${() => {
-            console.log('deal details')
+            dispatch({type: 'ADD_PRODUCT_TO_CART', payload: deal.name})
           } }>
             <h4>${deal.name}</h4>
             <img src=${deal.poster} />
-            <p>$25 from</p><p class='bargain'>$30</p>
+            <p>$${0.8 * deal.price}</p><p class='bargain'>$${deal.price}</p>
           </div>
 
           `)}

@@ -10,16 +10,19 @@ module.exports = (state, dispatch) => {
     ${header(state, dispatch)}
     <div id='searched'>
     ${searched.map((product) => html`
-      <div class='product col-lg-4 col-xs-12' onclick=${() => {
-        console.log('product details')
+      <div class='product col-lg-3 col-xs-12' onclick=${() => {
+        dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product})
       }}>
         <h4>${product.name}</h4>
         <img src=${product.poster} />
-        <p>$30</p>
+        ${checkIfDeal(product)}
       </div>
     `)}
     </div>
     ${footer()}
   </div>
   `
+  function checkIfDeal (product){
+    return product.deal ? html`<div><p>$${0.8*product.price}</p><p class='bargain'>$${product.price}</p></div>` : html`<p>$${product.price}</p>`
+  }
 }

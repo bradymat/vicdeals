@@ -11,7 +11,7 @@ module.exports = (state, dispatch) => {
       <div id='block'></div>
       <div id='searchAndCart'>
         <input type='text' placeholder='Search products'/>
-        <button>Cart</button>
+        <button onclick=${() => console.log('hey') }>Cart</button>
       </div>
     </div>
   </div>

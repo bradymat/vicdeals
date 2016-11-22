@@ -6,7 +6,6 @@ main {
 }
 #header{
   height: 12vh;
-  /*background-color: #222;*/
 ;
 }
 #innerHeader{
@@ -34,11 +33,9 @@ main {
 #searchAndCart{
   order: 2;
   width: 20%;
-  background-color: #fff;
 }
 #banner{
   height: 35vh;
-  background-color: lightblue;
   overflow: hidden;
   display: flex;
   flex-direction: column;

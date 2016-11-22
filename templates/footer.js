@@ -1,6 +1,6 @@
 const html = require('yo-yo')
 
-module.exports = (state, dispatch) => {
+module.exports = () => {
   return html`
   <div id='footer'>
     <p>Copyright</p>

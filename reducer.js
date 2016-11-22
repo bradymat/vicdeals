@@ -10,11 +10,18 @@ module.exports = (state, action) => {
     case 'TOGGLE_LOADING':
      newState.loading = !newState.loading
      return newState
-    case 'ORDER_BY_ABV':
-      newState.products.sort((a, b) => a.abv > b.abv ? -1 : 1)
+    // case 'ORDER_BY_ABV':
+    //   newState.products.sort((a, b) => a.abv > b.abv ? -1 : 1)
+    //   return newState
+    case 'ADD_PRODUCT_TO_CART':
+        const cart = newState.products.filter((product) => {
+        return product == payload
+      })
       return newState
-    case 'SEARCH_FOR_BEERS':
-      newState.searched = newState.products.filter((product) => product.name.toLowerCase().includes(payload.toLowerCase()))
+    case 'SEARCH_FOR_PRODUCTS':
+        newState.searched = newState.products.filter((product) => {
+        return product.name.toLowerCase().includes(payload.toLowerCase())
+      })
       return newState
     default:
       return newState

@@ -1,6 +1,9 @@
 const html = require('yo-yo')
 
+const { showSearched } = require('../')
+
 module.exports = (state, dispatch) => {
+  const { searched } = state
   return html`
   <div id='header'>
     <div id='innerHeader'>
@@ -10,8 +13,13 @@ module.exports = (state, dispatch) => {
       <div id='logoBg'></div>
       <div id='block'></div>
       <div id='searchAndCart'>
-        <input onkeyup=${(e) => console.log(e.target.value) } placeholder='Search products'/>
-        <button onclick=${() => console.log('hey') }>Cart</button>
+        <input onkeyup=${(e) => {
+          dispatch({type:'SEARCH_FOR_PRODUCTS', payload: e.target.value})
+          console.log('search input', e.target.value)
+        } } placeholder='Search products'/>
+        <button onclick=${() => {
+          console.log('to cart')
+        } }>Cart</button>
       </div>
     </div>
   </div>

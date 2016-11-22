@@ -71,6 +71,13 @@ main {
   text-decoration: line-through;
 
 }
+#searched{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 83vh;
+}
 #footer{
   text-align: center;
   height: 5vh;

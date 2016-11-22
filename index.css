@@ -1,0 +1,59 @@
+body{
+  margin: 0 auto;
+}
+main {
+  margin: 0 auto;
+  text-align: center;
+}
+#page{
+  margin: 0 auto;
+  padding: 0;
+}
+#header{
+  height: 15vh;
+  background-color: blue;
+}
+#innerHeader{
+  width: 80%;
+  margin: 0 auto;
+  height: inherit;
+  display: flex;
+  background-color: red;
+}
+#logo{
+  width: 300px;
+  height: inherit;
+  background-color: #000;
+}
+#search{
+  width: 30vw;
+  height: 30px;
+  background-color: #fff;
+}
+#slider{
+  height: 35vh;
+  background-color: green;
+}
+#dailyDeals{
+  width: 80%;
+  margin: 0 auto;
+
+}
+#dealTitle{
+  height: 5vh;
+}
+#deals{
+  height: 40vh;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deal{
+  background-color: yellow;
+  height: 90%;
+  border-left: 5px solid black;
+}
+#footer{
+  height: 5vh;
+}

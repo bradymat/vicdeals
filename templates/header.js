@@ -1,6 +1,6 @@
 const html = require('yo-yo')
 
-const links = require('../')
+const links = require('../index')
 
 module.exports = (state, dispatch) => {
   const { searched } = state

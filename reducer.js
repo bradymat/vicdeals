@@ -13,8 +13,16 @@ module.exports = (state, action) => {
     // case 'ORDER_BY_ABV':
     //   newState.products.sort((a, b) => a.abv > b.abv ? -1 : 1)
     //   return newState
+    case 'ADD_PRODUCT_TO_CART':
+        const newItem = newState.products.filter((product) => {
+        return product.name == payload
+      })
+      newState.cart.push(newItem[0])
+      return newState
     case 'SEARCH_FOR_PRODUCTS':
-      newState.searched = newState.products.filter((product) => product.name.toLowerCase().includes(payload.toLowerCase()))
+        newState.searched = newState.products.filter((product) => {
+        return product.name.toLowerCase().includes(payload.toLowerCase())
+      })
       return newState
     default:
       return newState

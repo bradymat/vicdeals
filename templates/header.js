@@ -10,7 +10,7 @@ module.exports = (state, dispatch) => {
       <div id='logoBg'></div>
       <div id='block'></div>
       <div id='searchAndCart'>
-        <input type='text' placeholder='Search products'/>
+        <input onkeyup=${(e) => console.log(e.target.value) } placeholder='Search products'/>
         <button onclick=${() => console.log('hey') }>Cart</button>
       </div>
     </div>

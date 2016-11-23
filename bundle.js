@@ -117,7 +117,6 @@ module.exports=require("./lib/index");
 "use strict";function symbolObservablePonyfill(e){var b,l=e.Symbol;return"function"==typeof l?l.observable?b=l.observable:(b=l("observable"),l.observable=b):b="@@observable",b}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=symbolObservablePonyfill;
 },{}],38:[function(require,module,exports){
 "function"==typeof Object.create?module.exports=function(t,e){t.super_=e,t.prototype=Object.create(e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}})}:module.exports=function(t,e){t.super_=e;var o=function(){};o.prototype=e.prototype,t.prototype=new o,t.prototype.constructor=t};
-
 },{}],39:[function(require,module,exports){
 module.exports=function(o){return o&&"object"==typeof o&&"function"==typeof o.copy&&"function"==typeof o.fill&&"function"==typeof o.readUInt8};
 },{}],40:[function(require,module,exports){

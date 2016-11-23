@@ -173,6 +173,9 @@ p{
 #cart button{
   margin-top: 5vh;
 }
+.empty{
+  margin-top: 50%;
+}
 .total{
   height: 5vh;
   margin-left: 80%;

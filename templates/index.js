@@ -8,7 +8,7 @@ module.exports = (state, dispatch) => {
   const deals = products.filter((product) => product.deal)
   return html`
   <div>
-    ${header(dispatch)}
+    ${header(state, dispatch)}
     <div id='banner'>
     <div class='swiper-container'>
       <div class='swiper-wrapper'>
@@ -30,7 +30,7 @@ module.exports = (state, dispatch) => {
       <div id='deals'>
         ${deals.map((deal) => html`
           <div class='deal col-lg-2 col-xs-12' onclick=${() => {
-            dispatch({type: 'ADD_PRODUCT_TO_CART', payload: deal.name})
+            dispatch({type: 'GO_PAGE', payload: `/${deal.id}`})
           }}>
             <h4>${deal.name}</h4>
             <img src=${deal.poster} />

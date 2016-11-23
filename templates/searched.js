@@ -7,11 +7,11 @@ module.exports = (state, dispatch) => {
   const { searched } = state
   return html`
   <div>
-    ${header(dispatch)}
+    ${header(state, dispatch)}
     <div id='searched'>
     ${searched.map((product) => html`
       <div class='product col-lg-3' onclick=${() => {
-        dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product.name})
+        dispatch({type: 'GO_PAGE', payload: `/${product.id}`})
       }}>
         <h4>${product.name}</h4>
         <img src=${product.poster} />

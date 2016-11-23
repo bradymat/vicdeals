@@ -5,6 +5,7 @@ const { update } = require('yo-yo')
 const Home = require('./templates')
 const Cart = require('./templates/cart')
 const Searched = require('./templates/searched')
+const Product = require('./templates/productDetails')
 const reducer = require('./reducer')
 
 const sheetRouter = require('sheet-router')
@@ -12,15 +13,19 @@ const sheetRouter = require('sheet-router')
 const initState = {
   route: '/',
   products: [
-    {name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', price: 25, stock: 13, deal: false},
-    {name: 'Iron Man', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg', price: 20, stock: 7, deal: true},
-    {name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', price: 25, stock: 10, deal: true},
-    {name: 'Westworld', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/luGF2ODxunHvDXWPRW9PjywIvuD.jpg', price: 25, stock: 13, deal: true},
-    {name: 'Fantastic Beasts and Where to Find Them', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/9HE9xiNMEFJnCzndlkWD7oPfAOx.jpg', price: 25, stock: 10, deal: false}
+    {id: 1, name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', price: 25, stock: 13, deal: false},
+    {id: 2, name: 'Iron Man', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg', price: 20, stock: 7, deal: true},
+    {id: 3, name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', price: 15, stock: 10, deal: true},
+    {id: 4, name: 'Westworld', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/luGF2ODxunHvDXWPRW9PjywIvuD.jpg', price: 20, stock: 13, deal: true},
+    {id: 5, name: 'Fantastic Beasts and Where to Find Them', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/9HE9xiNMEFJnCzndlkWD7oPfAOx.jpg', price: 25, stock: 10, deal: false},
+    {id: 6, name: 'Hanna', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/2Jr4Rl4Hjiahgh09bjeH8tFhgKp.jpg', price: 20, stock: 10, deal: true}
+
   ],
   searched: [],
   cart: [],
   backdrops: [
+    'https://image.tmdb.org/t/p/original/hP7Lxr8V2k2PIZY30QnBYCR9I4q.jpg',
+    'http://tmn-media-http.edgesuite.net/hbo/prod/minisite_landing/main_feature/465_1024x411.jpg',
     'https://image.tmdb.org/t/p/original/tFI8VLMgSTTU38i8TIsklfqS9Nl.jpg',
     'https://image.tmdb.org/t/p/original/6I2tPx6KIiBB4TWFiWwNUzrbxUn.jpg'
   ]
@@ -45,17 +50,17 @@ const showSearched = () => {
 const router = sheetRouter({ default: '/404' }, [
   ['/', (params) => Home(getState(), dispatch)],
   ['/cart', (params) => Cart(getState(), dispatch)],
+  ['/:id', (params) => Product(getState(), dispatch)],
   ['/404', (params) => html`<div>Oh no, path not found!</div>`]
 ])
 
-const view = router(getState().route)
 const link = () => {
   const newView = router(getState().route)
   update(initView, newView)
 }
 
 const main = document.querySelector('main')
-const initView = main.appendChild(view)
+const initView = main.appendChild(router(getState().route))
 
 subscribe(link)
 subscribe(showSearched)

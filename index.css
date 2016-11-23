@@ -43,12 +43,6 @@ main {
   flex-direction: column;
   justify-content: center;
 }
-.swiper-slide{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 #banner img{
   width: 100%;
 }
@@ -78,7 +72,26 @@ main {
 }
 .bargain{
   text-decoration: line-through;
-
+}
+.details{
+  margin: 0 auto;
+  margin-left: 20%;
+  height: 80vh;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+.details p{
+  margin-top: 50px;
+}
+.pic{
+  width: 30%;
+  order: 1;
+}
+.deats{
+  margin-left: 5%;
+  width: 30%;
+  order: 2;
 }
 #searched{
   margin: 0 auto;

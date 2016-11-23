@@ -7,15 +7,30 @@ module.exports = (state, dispatch) => {
   const { cart } = state
   return html`
   <div>
-    ${header(dispatch)}
+    ${header(state, dispatch)}
     <div id='cart'>
     <table>
     ${checkCartEmpty()}
+    ${total()}
     </table>
     </div>
     ${footer()}
   </div>
   `
+  function total () {
+    if(cart.length !=0){
+    const arr = cart.map((product) => {
+      if (!product.deal){
+        return product.price * product.quantity
+      }
+      return product.price * product.quantity * 0.8
+    })
+    const total = arr.reduce((a, b) => {
+      return a+b
+    })
+    return html`<h3> Total is $${total}</h3>`
+  }
+  }
   function checkIfDeal (product) {
     return product.deal ? html`<div><p>$${0.8 * product.price * product.quantity}</p><p class='bargain'>$${product.price * product.quantity}</p></div>` : html`<p>$${product.price * product.quantity}</p>`
   }

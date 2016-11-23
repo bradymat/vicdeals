@@ -43,6 +43,12 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+.swiper-slide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #banner img{
   width: 100%;
 }

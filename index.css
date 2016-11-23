@@ -20,8 +20,10 @@ main {
 #logo{
   z-index: 2;
   position: absolute;
-  width: 200px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+  overflow: hidden;
 }
 #logo img{
   height: inherit;
@@ -61,6 +63,7 @@ main {
   align-items: center;
 }
 .deal{
+  cursor: pointer;
   margin-right: 40px;
   height: 100%;
 }
@@ -75,14 +78,19 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   height: 83vh;
+  overflow-y: scroll;
 }
-#searched div{
-  height: 80vh;
+.product{
+  margin-left: 20px;
+  margin-top: 50px;
+  height: 50%;
+  cursor: pointer;
 }
-#searched img{
-  height: 40%;
+.product img{
+  height:80%;
+  max-height: inherit;
 }
 #cart{
   margin: 0 auto;

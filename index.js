@@ -12,9 +12,11 @@ const sheetRouter = require('sheet-router')
 const initState = {
   route: '/',
   products: [
-    {name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', price: 25, stock: 13, deal: true},
+    {name: 'Doctor Strange', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', price: 25, stock: 13, deal: false},
     {name: 'Iron Man', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg', price: 20, stock: 7, deal: true},
-    {name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', price: 25, stock: 10, deal: false}
+    {name: 'Gladiator', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg', price: 25, stock: 10, deal: true},
+    {name: 'Westworld', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/luGF2ODxunHvDXWPRW9PjywIvuD.jpg', price: 25, stock: 13, deal: true},
+    {name: 'Fantastic Beasts and Where to Find Them', poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/9HE9xiNMEFJnCzndlkWD7oPfAOx.jpg', price: 25, stock: 10, deal: false}
   ],
   searched: [],
   cart: [],
@@ -31,7 +33,7 @@ const goCart = () => {
 const showSearched = () => {
   // console.log('render searched products')
   const state = getState()
-  if(state.searched.length != 0){
+  if (state.searched.length != 0) {
     const newView = Searched(state, dispatch)
     update(initView, newView)
   }

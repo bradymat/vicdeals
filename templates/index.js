@@ -18,7 +18,7 @@ module.exports = (state, dispatch) => {
         ${deals.map((deal) => html`
           <div class='deal col-lg-2 col-xs-12' onclick=${() => {
             dispatch({type: 'ADD_PRODUCT_TO_CART', payload: deal.name})
-          } }>
+          }}>
             <h4>${deal.name}</h4>
             <img src=${deal.poster} />
             <p>$${0.8 * deal.price}</p><p class='bargain'>$${deal.price}</p>

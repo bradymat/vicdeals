@@ -28,7 +28,6 @@ test('search test deals', function (t) {
   const actual = reducer(state, {type: 'SEARCH_FOR_PRODUCTS', payload: 'docTOR'})
   t.deepEquals(actual, expected, 'worked')
   t.end()
-
 })
 
 test('search test case', function (t) {
@@ -53,7 +52,6 @@ test('search test case', function (t) {
   const actual = reducer(state, {type: 'SEARCH_FOR_PRODUCTS', payload: 'GlAd'})
   t.deepEquals(actual, expected, 'worked')
   t.end()
-
 })
 
 test('add product to cart', function (t) {
@@ -80,5 +78,4 @@ test('add product to cart', function (t) {
   const actual = reducer(state, {type: 'ADD_PRODUCT_TO_CART', payload: 'Gladiator'})
   t.deepEquals(actual, expected, 'worked')
   t.end()
-
 })

@@ -10,7 +10,7 @@ module.exports = (state, dispatch) => {
     ${header(dispatch)}
     <div id='searched'>
     ${searched.map((product) => html`
-      <div class='product' onclick=${() => {
+      <div class='product col-lg-3' onclick=${() => {
         dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product.name})
       }}>
         <h4>${product.name}</h4>
@@ -22,7 +22,7 @@ module.exports = (state, dispatch) => {
     ${footer()}
   </div>
   `
-  function checkIfDeal (product){
-    return product.deal ? html`<div><p>$${0.8*product.price}</p><p class='bargain'>$${product.price}</p></div>` : html`<p>$${product.price}</p>`
+  function checkIfDeal (product) {
+    return product.deal ? html`<div><p>$${0.8 * product.price}</p><p class='bargain'>$${product.price}</p></div>` : html`<p>$${product.price}</p>`
   }
 }

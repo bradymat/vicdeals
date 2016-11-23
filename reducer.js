@@ -12,18 +12,16 @@ module.exports = (state, action) => {
       const check = newState.cart.filter((product) => {
         return product.name == payload
       })
-      console.log('check', check);
       if(check.length < 1){
         const newItem = newState.products.filter((product) => {
           return product.name == payload
         })
         newItem[0].quantity = 1
         newState.cart.push(newItem[0])
-        console.log('cart', newState.cart);
       }
       else{
         newState.cart.filter((product) => {
-          if(product.name == payload) product.quantity +=1
+          if(product.name == payload && product.quantity < product.stock) product.quantity +=1
         })
       }
       return newState

@@ -28,7 +28,7 @@ module.exports = (state, dispatch) => {
           }}>
             <h4>${deal.name}</h4>
             <img src=${deal.poster} />
-            <p>$${0.8 * deal.price} from </p><p class='bargain'>$${deal.price}</p>
+            <div><p>$${0.8 * deal.price} from </p><p class='bargain'>$${deal.price}</p></div>
           </div>
 
           `)}

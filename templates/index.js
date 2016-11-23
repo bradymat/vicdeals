@@ -10,18 +10,12 @@ module.exports = (state, dispatch) => {
   <div>
     ${header(state, dispatch)}
     <div id='banner'>
-    <div class='swiper-container'>
-      <div class='swiper-wrapper'>
       ${backdrops.map((backdrop) => {
         return html`
-        <div class='swiper-slide'>
           <img src=${backdrop}/>
-        </div>
         `
       })
         }
-        </div>
-      </div>
     </div>
     <div id='dailyDeals'>
       <div id='dealTitle'>

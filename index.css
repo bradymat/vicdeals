@@ -1,5 +1,6 @@
 body{
   margin: 0 auto;
+  background: linear-gradient(135deg, #fff 43%, #fff 43%, #C8C8C8 89%, #C8C8C8 89%);
 }
 main {
   margin: 0 auto;
@@ -16,7 +17,7 @@ p{
 }
 #header{
   height: 12vh;
-  background-color: #D3D3D3;
+  background: #D3D3D3;
   opacity: 0.5;
 }
 #header h1{

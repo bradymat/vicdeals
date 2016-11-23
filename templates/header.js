@@ -5,7 +5,7 @@ module.exports = (dispatch) => {
   <div id='header'>
     <div id='innerHeader'>
       <div id='logo'>
-        <img onclick=${() => dispatch({type: 'GO_PAGE', payload: '/'})} src='http://weknowyourdreams.com/images/lemon/lemon-06.jpg'/>
+        <img onclick=${() => dispatch({type: 'GO_PAGE', payload: '/'})} src='https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png'/>
       </div>
       <div id='block'></div>
       <div id='searchAndCart'>

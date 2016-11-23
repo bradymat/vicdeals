@@ -18,6 +18,7 @@ module.exports = (state, action) => {
         const newItem = newState.products.filter((product) => {
         return product.name == payload
       })
+      newItem.quantity += 1
       newState.cart.push(newItem[0])
       return newState
     case 'REMOVE_PRODUCT_FROM_CART':

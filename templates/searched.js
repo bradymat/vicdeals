@@ -10,7 +10,7 @@ module.exports = (state, dispatch) => {
     ${header(dispatch)}
     <div id='searched'>
     ${searched.map((product) => html`
-      <div class='product col-lg-3 col-xs-12' onclick=${() => {
+      <div class='product' onclick=${() => {
         dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product.name})
       }}>
         <h4>${product.name}</h4>

@@ -4,10 +4,14 @@ body{
 main {
   margin: 0 auto;
   max-height: 100vh;
+  max-width: 100vw;
 }
 #header{
   height: 12vh;
   background-color: #fff;
+  -webkit-box-shadow: 0 8px 6px -6px #D3D3D3;
+	   -moz-box-shadow: 0 8px 6px -6px #D3D3D3;
+	        box-shadow: 0 8px 6px -6px #D3D3D3;
 }
 #innerHeader{
   padding-top: 3vh;
@@ -132,11 +136,10 @@ main {
 }
 #cart tr{
   max-height: 15vh;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #A9A9A9;
 }
 .total{
   height: 5vh;
-  width: 100%;
   margin-left: 80%;
 }
 #footer{

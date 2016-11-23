@@ -20,7 +20,10 @@ const initState = {
   ],
   searched: [],
   cart: [],
-  backdrops: 'https://image.tmdb.org/t/p/original/tFI8VLMgSTTU38i8TIsklfqS9Nl.jpg'
+  backdrops: [
+    'https://image.tmdb.org/t/p/original/tFI8VLMgSTTU38i8TIsklfqS9Nl.jpg',
+    'https://image.tmdb.org/t/p/original/6I2tPx6KIiBB4TWFiWwNUzrbxUn.jpg'
+  ]
 }
 const { dispatch, subscribe, getState } = createStore(reducer, initState)
 

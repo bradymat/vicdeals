@@ -37,7 +37,7 @@ module.exports = (state, action) => {
       const itemToRemove = newState.cart.filter((product, index) => {
         if(product.name === payload.name) {
           if(product.quantity > 1)product.quantity -=1
-          else newState.cart.splice(index)
+          else newState.cart.splice(index, 1)
         }
       })
       return newState

@@ -41,7 +41,6 @@ var toString={}.toString;module.exports=Array.isArray||function(r){return"[objec
 
 },{}],13:[function(require,module,exports){
 var root=require("./_root"),Symbol=root.Symbol;module.exports=Symbol;
-
 },{"./_root":20}],14:[function(require,module,exports){
 function baseGetTag(e){return null==e?void 0===e?undefinedTag:nullTag:(e=Object(e),symToStringTag&&symToStringTag in e?getRawTag(e):objectToString(e))}var Symbol=require("./_Symbol"),getRawTag=require("./_getRawTag"),objectToString=require("./_objectToString"),nullTag="[object Null]",undefinedTag="[object Undefined]",symToStringTag=Symbol?Symbol.toStringTag:void 0;module.exports=baseGetTag;
 },{"./_Symbol":13,"./_getRawTag":17,"./_objectToString":18}],15:[function(require,module,exports){
@@ -117,6 +116,7 @@ module.exports=require("./lib/index");
 "use strict";function symbolObservablePonyfill(e){var b,l=e.Symbol;return"function"==typeof l?l.observable?b=l.observable:(b=l("observable"),l.observable=b):b="@@observable",b}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=symbolObservablePonyfill;
 },{}],38:[function(require,module,exports){
 "function"==typeof Object.create?module.exports=function(t,e){t.super_=e,t.prototype=Object.create(e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}})}:module.exports=function(t,e){t.super_=e;var o=function(){};o.prototype=e.prototype,t.prototype=new o,t.prototype.constructor=t};
+
 },{}],39:[function(require,module,exports){
 module.exports=function(o){return o&&"object"==typeof o&&"function"==typeof o.copy&&"function"==typeof o.fill&&"function"==typeof o.readUInt8};
 },{}],40:[function(require,module,exports){
@@ -130,7 +130,6 @@ function Wayfarer(r){function e(r,e){if(assert.equal(typeof r,"string"),assert.e
 function Trie(){return this instanceof Trie?void(this.trie={nodes:{}}):new Trie}const mutate=require("xtend/mutable"),assert=require("assert"),xtend=require("xtend");module.exports=Trie,Trie.prototype.create=function(e){assert.equal(typeof e,"string","route should be a string");const t=e.replace(/^\//,"").split("/");return function e(t,n,s){const o=s[t];if(void 0===o)return n;var r=null;return/^:/.test(o)?(n.nodes.$$?r=n.nodes.$$:(r={nodes:{}},n.nodes.$$=r),n.name=o.replace(/^:/,"")):n.nodes[o]?r=n.nodes[o]:(r={nodes:{}},n.nodes[o]=r),e(t+1,r,s)}(0,this.trie,t)},Trie.prototype.match=function(e){assert.equal(typeof e,"string","route should be a string");const t=e.replace(/^\//,"").split("/"),n={};var s=function e(s,o){if(void 0!==o){const r=t[s];return void 0===r?o:o.nodes[r]?e(s+1,o.nodes[r]):o.name?(n[o.name]=r,e(s+1,o.nodes.$$)):e(s+1)}}(0,this.trie);if(s)return s=xtend(s),s.params=n,s},Trie.prototype.mount=function(e,t){assert.equal(typeof e,"string","route should be a string"),assert.equal(typeof t,"object","trie should be a object");const n=e.replace(/^\//,"").split("/");var s=null,o=null;if(1===n.length)o=n[0],s=this.create(o);else{const r=n.splice(0,n.length-1),i=r.join("/");o=n[0],s=this.create(i)}mutate(s.nodes,t.nodes),t.name&&(s.name=t.name),s.nodes[""]&&(Object.keys(s.nodes[""]).forEach(function(e){"nodes"!==e&&(s[e]=s.nodes[""][e])}),mutate(s.nodes,s.nodes[""].nodes),delete s.nodes[""].nodes)};
 },{"assert":1,"xtend":43,"xtend/mutable":44}],43:[function(require,module,exports){
 function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
-
 },{}],44:[function(require,module,exports){
 function extend(r){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
 

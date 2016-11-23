@@ -15,17 +15,31 @@ module.exports = (state, action) => {
     //   newState.products.sort((a, b) => a.abv > b.abv ? -1 : 1)
     //   return newState
     case 'ADD_PRODUCT_TO_CART':
-      const newItem = newState.products.filter((product) => {
+      const check = newState.cart.filter((product) => {
         return product.name == payload
       })
-      newItem.quantity += 1
-      newState.cart.push(newItem[0])
+      console.log('check', check);
+      if(check.length < 1){
+        const newItem = newState.products.filter((product) => {
+          return product.name == payload
+        })
+        newItem[0].quantity = 1
+        newState.cart.push(newItem[0])
+        console.log('cart', newState.cart);
+      }
+      else{
+        newState.cart.filter((product) => {
+          if(product.name == payload) product.quantity +=1
+        })
+      }
       return newState
     case 'REMOVE_PRODUCT_FROM_CART':
-      const itemToRemove = newState.cart.filter((product) => {
-        return product.name === payload.name
+      const itemToRemove = newState.cart.filter((product, index) => {
+        if(product.name === payload.name) {
+          if(product.quantity > 1)product.quantity -=1
+          else newState.cart.splice(index)
+        }
       })
-      newState.cart.push(itemToRemove[0])
       return newState
     case 'SEARCH_FOR_PRODUCTS':
       newState.searched = newState.products.filter((product) => {

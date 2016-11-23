@@ -8,7 +8,7 @@ module.exports = (state, dispatch) => {
   const deals = products.filter((product) => product.deal)
   return html`
   <div>
-    ${header(state, dispatch)}
+    ${header(dispatch)}
     <div id='banner'><img src=${backdrops}/></div>
     <div id='dailyDeals'>
       <div id='dealTitle'>

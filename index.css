@@ -78,7 +78,31 @@ main {
   align-items: center;
   height: 83vh;
 }
+#searched div{
+  height: 80vh;
+}
+#searched img{
+  height: 40%;
+}
+#cart{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cart td img{
+  height: 150px;
+  margin: 20px;
+
+}
+#cart td{
+  padding-right: 200px;
+}
+#cart tr{
+  border-bottom: 2px solid black;
+}
 #footer{
+  padding-top: 10px;
   text-align: center;
   height: 5vh;
 }

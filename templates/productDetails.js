@@ -6,7 +6,7 @@ const footer = require('./footer')
 module.exports = (state, dispatch) => {
   return html`
   <div>
-  ${header(state, dispatch)}
+  ${header(dispatch)}
   blah
   ${footer()}
   </div>

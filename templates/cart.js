@@ -7,15 +7,17 @@ module.exports = (state, dispatch) => {
   const { cart } = state
   return html`
   <div>
-    ${header(state, dispatch)}
+    ${header(dispatch)}
     <div id='cart'>
+    <table>
     ${cart.map((product) => html`
-      <div class='product col-lg-3 col-xs-12' }>
-        <h4>${product.name}</h4>
-        <img src=${product.poster} />
-        ${checkIfDeal(product)}
-      </div>
+      <tr onclick=${ () => dispatch({type: 'REMOVE_PRODUCT_FROM_CART', payload:product})}>
+        <td><img src=${product.poster} /></td>
+        <td><h4>${product.name}</h4></td>
+        <td>${checkIfDeal(product)}</td>
+      </tr>
     `)}
+    </table>
     </div>
     ${footer()}
   </div>

@@ -3,6 +3,7 @@ body{
 }
 main {
   margin: 0 auto;
+  max-height: 100vh;
 }
 #header{
   height: 12vh;
@@ -116,11 +117,13 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 83vh;
+  height: 75vh;
   overflow-y: scroll;
 }
 #cart td img{
+
   height: 150px;
+  max-height: 15vh;
   margin: 20px;
 
 }
@@ -128,7 +131,13 @@ main {
   padding-right: 200px;
 }
 #cart tr{
+  max-height: 15vh;
   border-bottom: 2px solid black;
+}
+.total{
+  height: 5vh;
+  width: 100%;
+  margin-left: 80%;
 }
 #footer{
   padding-top: 10px;

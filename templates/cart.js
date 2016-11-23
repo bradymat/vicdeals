@@ -11,8 +11,10 @@ module.exports = (state, dispatch) => {
     <div id='cart'>
     <table>
     ${checkCartEmpty()}
-    ${total()}
     </table>
+    </div>
+    <div class='total'>
+    ${total()}
     </div>
     ${footer()}
   </div>

@@ -1,5 +1,5 @@
 
-# blueegg
+# Lemon Wire
 
 it's a real sweet app
 
@@ -8,8 +8,8 @@ it's a real sweet app
 ### install
 
 ```
-git clone https://github.com/bradymat/blueegg
-cd 
+git clone
+cd
 npm install
 ```
 

@@ -34,7 +34,7 @@ module.exports = (state, dispatch) => {
   }
   }
   function checkIfDeal (product) {
-    return product.deal ? html`<div><p>$${0.8 * product.price * product.quantity}</p><p class='bargain'>$${product.price * product.quantity}</p></div>` : html`<p>$${product.price * product.quantity}</p>`
+    return product.deal ? html`<div><br><p>$${0.8 * product.price} from </p><p class='bargain'>$${product.price}</p></div>` : html`<div><br><p>$${product.price}</p></div>`
   }
   function checkCartEmpty () {
     if(cart.length !=0){

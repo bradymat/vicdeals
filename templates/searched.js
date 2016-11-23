@@ -10,12 +10,15 @@ module.exports = (state, dispatch) => {
     ${header(state, dispatch)}
     <div id='searched'>
     ${searched.map((product) => html`
-      <div class='product col-lg-3' onclick=${() => {
-        dispatch({type: 'GO_PAGE', payload: `/${product.id}`})
-      }}>
+      <div class='product col-lg-3'>
         <h4>${product.name}</h4>
-        <img src=${product.poster} />
+        <img onclick=${() => {
+          dispatch({type: 'GO_PAGE', payload: `/${product.id}`})
+        }} src=${product.poster} />
         ${checkIfDeal(product)}
+        <button onclick=${() => {
+          dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product.name})
+        }}>Add to cart</button>
       </div>
     `)}
     </div>
@@ -23,6 +26,6 @@ module.exports = (state, dispatch) => {
   </div>
   `
   function checkIfDeal (product) {
-    return product.deal ? html`<div><p>$${0.8 * product.price}</p><p class='bargain'>$${product.price}</p></div>` : html`<p>$${product.price}</p>`
+    return product.deal ? html`<div><br><p>$${0.8 * product.price} from </p><p class='bargain'>$${product.price}</p></div>` : html`<div><br><p>$${product.price}</p></div>`
   }
 }

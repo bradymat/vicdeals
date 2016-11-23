@@ -31,6 +31,6 @@ Nulla facilisi. Donec quis risus in diam blandit laoreet. Vestibulum purus eros,
   </div>
   `
   function checkIfDeal (product) {
-    return product.deal ? html`<div><p>$${0.8 * product.price}</p><p class='bargain'>$${product.price}</p></div>` : html`<p>$${product.price}</p>`
+    return product.deal ? html`<div><br><p>$${0.8 * product.price} from </p><p class='bargain'>$${product.price}</p></div>` : html`<div><br><p>$${product.price}</p></div>`
   }
 }

@@ -24,10 +24,7 @@ const initState = {
   searched: [],
   cart: [],
   backdrops: [
-    'https://image.tmdb.org/t/p/original/hP7Lxr8V2k2PIZY30QnBYCR9I4q.jpg',
-    'http://tmn-media-http.edgesuite.net/hbo/prod/minisite_landing/main_feature/465_1024x411.jpg',
-    'https://image.tmdb.org/t/p/original/tFI8VLMgSTTU38i8TIsklfqS9Nl.jpg',
-    'https://image.tmdb.org/t/p/original/6I2tPx6KIiBB4TWFiWwNUzrbxUn.jpg'
+    'https://image.tmdb.org/t/p/original/hP7Lxr8V2k2PIZY30QnBYCR9I4q.jpg'
   ]
 }
 const { dispatch, subscribe, getState } = createStore(reducer, initState)

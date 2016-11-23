@@ -52,7 +52,9 @@ module.exports = (state, dispatch) => {
       `
     }
     else return html`
+    <div class='empty'>
     <h3>Not much of a rind in your cart</h3>
+    </div>
     `
   }
 }

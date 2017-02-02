@@ -6,45 +6,15 @@ module.exports = (state, dispatch) => {
   <div id='header'>
     <div id='innerHeader'>
       <div onclick=${() => dispatch({type: 'GO_PAGE', payload: '/'})} id='logo'>
-        <h1>Lemon Wire</h1>
+        <h1>Vic Deals</h1>
       </div>
       <div id='block'></div>
       <div id='searchAndCart'>
         <input onclick=${(e) => e.target.value = ''} onkeyup=${(e) => {
           dispatch({type: 'SEARCH_FOR_PRODUCTS', payload: e.target.value})
-        }} placeholder='  Search products'/>
-        <button onclick=${() => dispatch({type: 'GO_PAGE', payload: '/cart'})}>Cart</button>
-        ${checkIfCartPage()}
+        }} placeholder='  Search deals'/>
       </div>
     </div>
   </div>
   `
-  function checkIfCartPage () {
-    if(state.route != '/cart') return html`<h5>${numberInCart()}${total()}</h5>`
-  }
-  function numberInCart () {
-    if(cart.length !=0){
-    const arr = cart.map((product) => {
-      return product.quantity
-    })
-    const total = arr.reduce((a, b) => {
-      return a+b
-    })
-    return html`<span>${total} items in cart, </span>`
-  }
-}
-  function total () {
-    if(cart.length !=0){
-    const arr = cart.map((product) => {
-      if (!product.deal){
-        return product.price * product.quantity
-      }
-      return product.price * product.quantity * 0.8
-    })
-    const total = arr.reduce((a, b) => {
-      return a+b
-    })
-    return html`<span>total is $${total}</span>`
-  }
-  }
 }

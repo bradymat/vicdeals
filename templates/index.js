@@ -19,7 +19,7 @@ module.exports = (state, dispatch) => {
     </div>
     <div id='dailyDeals'>
       <div id='dealTitle'>
-        <h3>Daily Deals</h3>
+        <h3>Featured Deals</h3>
       </div>
       <div id='deals'>
         ${deals.map((deal) => html`

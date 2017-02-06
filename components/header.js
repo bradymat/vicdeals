@@ -13,6 +13,7 @@ module.exports = (state, dispatch) => {
         <input onclick=${(e) => e.target.value = ''} onkeyup=${(e) => {
           dispatch({type: 'SEARCH_FOR_PRODUCTS', payload: e.target.value})
         }} placeholder='  Search deals'/>
+        <button onclick=${() => dispatch({type: 'GO_PAGE', payload: '/addDeal'})}>Add Deal</button>
       </div>
     </div>
   </div>

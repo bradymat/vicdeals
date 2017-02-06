@@ -108,7 +108,7 @@ p{
   text-align: left;
   height: 8vh;
 }
-#deals{
+#featuredDeals{
   height: 40vh;
   display: flex;
   justify-content: center;
@@ -121,6 +121,7 @@ p{
   cursor: pointer;
   margin-right: 40px;
   height: 100%;
+  overflow: hidden;
 }
 .deal img:hover{
   opacity: 0.7;
@@ -134,7 +135,7 @@ p{
 .details{
   margin: 0 auto;
   margin-left: 20%;
-  height: 80vh;
+  height: 83vh;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
@@ -176,37 +177,10 @@ p{
 .product img:hover{
   opacity: 0.7;
 }
-#cart{
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  height: 75vh;
-  overflow-y: scroll;
-  width: 90%;
-}
-#cart td img{
-
-  height: 150px;
-  max-height: 15vh;
-  margin: 20px;
-
-}
-#cart td{
-  padding-right: 200px;
-}
-#cart tr{
-  border-bottom: 2px solid #A9A9A9;
-}
-#cart button{
-  margin-top: 5vh;
-}
-.empty{
-  margin-top: 50%;
-}
-.total{
-  height: 5vh;
-  margin-left: 80%;
+.form{
+  margin-top: 10%;
+  height: 88vh;
+  text-align: center;
 }
 #footer{
   padding-top: 10px;

@@ -2,15 +2,16 @@ const { createStore } = require('redux')
 const html = require('yo-yo')
 const { update } = require('yo-yo')
 
-const Home = require('./templates')
-const Cart = require('./templates/cart')
-const Searched = require('./templates/searched')
-const Product = require('./templates/productDetails')
+const Home = require('./components')
+const AddDeal = require('./components/addDeal')
+const Searched = require('./components/searched')
+const Product = require('./components/productDetails')
 const reducer = require('./reducer')
 
 const sheetRouter = require('sheet-router')
 
 const { dispatch, subscribe, getState } = createStore(reducer, require('./initialState'))
+require('./getDeals')(getState(), dispatch)
 
 const goCart = () => {
   const state = getState()
@@ -29,7 +30,7 @@ const showSearched = () => {
 
 const router = sheetRouter({ default: '/404' }, [
   ['/', (params) => Home(getState(), dispatch)],
-  ['/cart', (params) => Cart(getState(), dispatch)],
+  ['/addDeal', (params) => AddDeal(getState(), dispatch)],
   ['/:id', (params) => Product(getState(), dispatch)],
   ['/404', (params) => html`<div>Oh no, path not found!</div>`]
 ])

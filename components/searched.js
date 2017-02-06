@@ -15,17 +15,11 @@ module.exports = (state, dispatch) => {
         <img onclick=${() => {
           dispatch({type: 'GO_PAGE', payload: `/${product.id}`})
         }} src=${product.poster} />
-        ${checkIfDeal(product)}
-        <button onclick=${() => {
-          dispatch({type: 'ADD_PRODUCT_TO_CART', payload: product.name})
-        }}>Add to cart</button>
+        <p>${product.deal}</p>
       </div>
     `)}
     </div>
     ${footer()}
   </div>
   `
-  function checkIfDeal (product) {
-    return product.deal ? html`<div><br><p>$${0.8 * product.price} from </p><p class='bargain'>$${product.price}</p></div>` : html`<div><br><p>$${product.price}</p></div>`
-  }
 }

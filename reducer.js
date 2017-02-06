@@ -8,6 +8,9 @@ module.exports = (state, action) => {
       newState.route = payload
       newState.searched = []
       return newState
+    case 'GET_DEALS':
+      newState.products = payload
+      return newState
     case 'ADD_PRODUCT_TO_CART':
       const check = newState.cart.filter((product) => {
         return product.name == payload
@@ -37,6 +40,9 @@ module.exports = (state, action) => {
       newState.searched = newState.products.filter((product) => {
         return product.name.toLowerCase().includes(payload.toLowerCase())
       })
+      return newState
+    case 'SAVE_NEW_DEAL_INFO':
+      newState.newDeal.payload.change = payload.value
       return newState
     default:
       return newState

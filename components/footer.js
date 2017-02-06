@@ -1,9 +1,6 @@
-const html = require('yo-yo')
+import React from 'react'
 
-module.exports = () => {
-  return html`
-  <div id='footer'>
-    <p>Clientside Redux app by <a href='https://github.com/bradymat'>bradymat</a></p>
-  </div>
-  `
-}
+module.exports = () =>
+    <div id='footer'>
+      <p>A React app by <a href='https://github.com/bradymat'>bradymat</a></p>
+    </div>

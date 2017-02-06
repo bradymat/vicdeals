@@ -2,36 +2,44 @@ body{
   margin: 0 auto;
   background: linear-gradient(135deg, #fff 43%, #fff 43%, #C8C8C8 89%, #C8C8C8 89%);
 }
-main {
+main{
   margin: 0 auto;
   max-height: 100vh;
   max-width: 100vw;
-  font-family: Open Sans Condensed;
+  font-family: Tahoma;
 }
-button {
-  opacity: 0.7;
-  border: none;
-  background-color: #C8C8C8;
+button{
+  background-color: #4267b2;
+  border-color: #4267b2;
+  border: 1px solid;
+  border-radius: 2px;
 }
 button:hover{
   background-color: #fff;
+  color: #4267b2;
+}
+.buttonLink {
+  color: #fff;
 }
 p{
   display: inline;
   margin: 0 auto;
 }
 #header{
-  height: 12vh;
-  background: #D3D3D3;
-  opacity: 0.5;
+  height: 38px;
+  background: #4267b2;
+  width: 100vw;
+  position: fixed;
 }
 #header h1{
-  font-family: lobster;
-  color: #000;
+  margin-top: 8px;
+  font-family: Tahoma;
+  color: #fff;
+  font-size: 20px;
 }
 #header h1:hover{
-  color: #FFD700;
-  text-shadow: 0 1px 0 #000,
+  color: #ECF0F1;
+  /*text-shadow: 0 1px 0 #000,
                0 2px 0 #000,
                0 3px 0 #000,
                0 4px 0 #000,
@@ -42,7 +50,7 @@ p{
                0 3px 5px rgba(0,0,0,.2),
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+               0 20px 20px rgba(0,0,0,.15);*/
 }
 #innerHeader{
   /*padding-top: 3vh;*/
@@ -90,10 +98,12 @@ p{
 }
 #banner{
   height: 35vh;
+  width: 80%;
+  padding-top: 38px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-left: 10%;
 }
 #banner img{
   width: 100%;
@@ -109,7 +119,7 @@ p{
   height: 8vh;
 }
 #featuredDeals{
-  height: 40vh;
+  height: 52vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +130,7 @@ p{
 .deal{
   cursor: pointer;
   margin-right: 40px;
-  height: 100%;
+  height: 80%;
   overflow: hidden;
 }
 .deal img:hover{
@@ -134,8 +144,9 @@ p{
 }
 .details{
   margin: 0 auto;
+  padding-top: 38px;
   margin-left: 20%;
-  height: 83vh;
+  height: 95vh;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
@@ -151,8 +162,8 @@ p{
   height:65%;
 }
 .deats{
-  margin-top: 50px;
-  margin-left: 5%;
+  margin-top: 70px;
+  margin-left: 20vh;
   width: 30%;
   order: 2;
 }
@@ -161,7 +172,7 @@ p{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 83vh;
+  height: 95vh;
   overflow-y: scroll;
 }
 .product{
@@ -178,8 +189,8 @@ p{
   opacity: 0.7;
 }
 .form{
-  margin-top: 10%;
-  height: 88vh;
+  padding-top: 10%;
+  height: 100vh;
   text-align: center;
 }
 #footer{
